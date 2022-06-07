@@ -1,0 +1,5 @@
+<div class="success">
+        <div class="success__name">Shop Name: {{ shop.shop_name }}</div>
+        <div class="success__button"><a href="{% url 'two_app:customer-login' shop.shop_name shop.shopId %}">http://127.0.0.1:8022/accounts/login-customer-neo/{{ shop.shop_name }}/{{ shop.shopId }}</a></div>
+    </div>
+</div>

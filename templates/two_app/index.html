@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block contents %}
+    <main class="main">
+
+        <section class="title">
+            <h1>Resavation system platform</h1>
+        </section>
+
+        {% if messages %}
+            <section class="message">
+                <div class="alert alert-primary" role="alert">
+                    <strong>Messages:</strong>
+                    {{ message }}
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </div>
+            </section>
+        {% endif %}
+
+        <section class="login">
+            <div class="login__card">
+                <h2 class="login__title">Shop Login</h2>
+                <div class="login__button">
+                    <a href="{% url 'two_app:shop-signup' %}">
+                        <div class="login__card__body">
+                            <h2 class="login__card__title">Shop Login Button</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="login__shop">
+                <h2>Shop List</h2>
+                {% for shop in shops %}
+                    <div class="login__shop__item">
+                        <h3 class="login__shop__name">Shop Name: {{ shop.shop_name }}</h3>
+                        <div class="login__shop__shopid">UUID: {{ shop.shopId }}</div>
+                        {% if shop.shop_name %}
+                        <div class="login__shop__link">
+                            <a href="{% url 'two_app:customer-login' shop.shop_name shop.shopId %}">http://127.0.0.1:8022/accounts/login-customer/{{ shop.shop_name }}/{{ shop.shopId }}</a>
+                        </div>
+                        {% endif %}
+                    </div>
+
+                {% endfor %}
+            </div>
+        </section>
+        <section class="text_message">
+            {% if user.is_authenticated %}
+                <p>Welcome, {{ user.email }}</p>
+            {% else %}
+                <p>Welcome Friend, please log in</p>
+            {% endif %}
+        </section>
+
+    </main>
+{% endblock %}

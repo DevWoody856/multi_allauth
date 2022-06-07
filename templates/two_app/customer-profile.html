@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block contents %}
+
+    <section class="profile">
+
+        {% if messages %}
+            <div class="message">
+                <strong>Messages:</strong>
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+            <div class="profile__contents">
+                <p>Welcome, {{ customer.user.email }}</p>
+                <p>{{ customer.description }}</p>
+            </div>
+        {% else %}
+            <div class="profile__contents">
+                <p>Welcome Friend, please log in</p>
+            </div>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+            <div class="profile__logout">
+                <a href="javascript:{document.getElementById('logout').submit()}">Logout</a>
+                <form action="{% url 'two_app:account_logout' %}" id="logout" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden">
+                </form>
+            </div>
+        {% else %}
+            <div class="profile__logout">
+                <h2>Not login</h2>
+            </div>
+        {% endif %}
+
+    </section>
+
+{% endblock %}

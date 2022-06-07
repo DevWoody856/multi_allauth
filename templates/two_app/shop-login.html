@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load socialaccount %}
+{% block contents %}
+
+    <div class="signin">
+        <form class="signin__form">
+            <h1 class="signin__form__title">Shop Sign-in</h1>
+            <a class="signin__form__button" href="{% provider_login_url 'google' action='reauthenticate' user='shop' %}">
+                <h2>Sign in with Google</h2>
+            </a>
+        </form>
+    </div>
+    <div>{{ user_e }}</div>
+
+{% endblock %}

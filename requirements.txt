@@ -1,0 +1,6 @@
+Django
+psycopg2-binary
+django-environ
+django-widget-tweaks
+django-htmx
+django-allauth==0.44.0

@@ -1,0 +1,25 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/base-style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom-style.css' %}">
+    <title>Auth App</title>
+</head>
+<body>
+    <section class="wrapper">
+        <header class="header">
+            <div class="header__contents">
+                <a class="header__link" href="{% url 'two_app:home' %}">Home</a>
+            </div>
+        </header>
+        {% block contents %}
+        {% endblock %}
+    </section>
+    <script src="{% static 'js/htmx.min.js' %}" defer></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load socialaccount %}
+{% block contents %}
+
+    <section class="signin">
+       <form class="signin__form">
+        <h1 class="signin__form__title">Customer Sign-in</h1>
+           <div>Shop name is: {{ shop.shop_name }}</div>
+           <div>Shop ID is: {{ shop.shopId }}</div>
+            <a class="signin__form__button"
+               href="{% provider_login_url 'google' user='customer' shop_name=shop.shop_name shop_id=shop.shopId action='reauthenticate' %}"
+               class="btn btn btn-danger btn-lg btn-block"
+               role="button" aria-pressed="true">
+                <h2>Sign in with Google</h2>
+            </a>
+        </form>
+    </section>
+    <div>{{ user_e }}</div>
+
+{% endblock %}
