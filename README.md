@@ -1,4 +1,4 @@
-This is the repository for <a href="https://rx-36.life/post/create-two-google-sign-in-for-each-user-type-using-allauth/" target="_blank">this blog post</a>.  
+This is the repository for <a href="https://rx-36.life/post/create-an-application-with-multiple-login-pages-with-allauth/" target="_blank">this blog post</a>.  
 I made a simple app to have two google sign-in for each user type using Allauth.
 
 
@@ -36,6 +36,8 @@ POSTGRES_DB=postgres
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
 ```
+Regarding the secret key, I recommend that you create a dummy key at a place like <a href="https://miniwebtool.com/django-secret-key-generator/" target="_blank">this site</a> and put it in the .env file.
+
 
 As a reminder, DB_HOST is the service name of the database in docker-compose.yaml.  
 In this docker configuration, DB_HOST is `db_twologin_8_220530`.
