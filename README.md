@@ -1,6 +1,7 @@
 This is the repository for <a href="https://rx-36.life/post/create-an-application-with-multiple-login-pages-with-allauth/" target="_blank">this blog post</a>.  
-I made a simple app to have two google sign-in for each user type using Allauth.
+I made a simple app to have multiple google login form with Allauth.
 
+<img src="https://res.cloudinary.com/dfqctp7bq/image/upload/v1654454030/ezgif.com-gif-maker_1_jvfloe.gif">
 
 ## How to download this repo locally and running the application
 
